@@ -1,0 +1,90 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "branchPrefix": "renovate-",
+  "baseBranches": [
+    "main"
+  ],
+  "reviewersFromCodeOwners": true,
+  "branchConcurrentLimit": 1,
+  "enabledManagers": [
+    "composer",
+    "dockerfile"
+  ],
+  "hostRules": [
+    {
+      "hostType": "git-tags",
+      "encrypted": {
+        "token": "wcFMA/xDdHCJBTolAQ/+OBTqhsVJUV7gV4uCicveP1eaqwfVIlO5ccps4n/1Z2KN1MjFelTtmA0eH4keD3q5KJ6MYOsvza91Ep1V+YTT0F4NWzO/vlwCMEqImzdHpYCev6BN+6mb3LQznQE1JnAc1EHKuMQfkku5f6w27kWF+U/++sV1nYItqXTVY5J40f89PaTM7QnJiFeSnGAesR7/iW3OD11Y/5wAOKu6aS+tXWCYjPqv81cBgz4FXpjIQPeW08a7T88QGpLP2rczDo0L/QqFtfo5H13uIrw17XssI2GPMfM9jc0u8ULwbgeoCayXOkmwyGIkAKNMMgPQbXsN1IQzAErlV5KxcdNV/Ek0Rq6a2fA319D6nm2FWWhJB3L+kjNvv9p9QGq3WdpbZhmJJjkZmPXM55Da/q2yHAAbmxs35rmqZVO7NBF1rIaTSGIvVZTPk8wmMocQDQQ7cfloeUspHQkbE1dkWYXhtPlRkN53pwyytRg3c4ptyU63T11hDpDjR1lfHvm34VsGD5VCR7lfLr0cRaxNIbBmwrpbZMDM4tyCH7foZnKvgSJm9JytzFSr9Q8u+MZG8Jyacv3J3+bGRXmyHyP7bXULXA1M48yY4aSIGk3eDGULcV9Iw5pW5hXsC275CQy1yrMy9mP0LUIqiqBLi2dBC8vx2qnHGmaVO3rhgVkqhLxSLA84R4nSfQFJqQP32w4MiNCZUbZmkiFG0ohsfkPLtBAfeblcB20dfO7ib2y9OsDmax9PC6orCbDDKxzTFVmvyfsVz5cYZySE3y0jCD+Ned3pPg/4tKxXljiI+FE4qPQZrQT7Y22Bp82NnGAdU8CwDQsig9MvCZNw2Fc0Bcg1uIKWQicE"
+      }
+    }
+  ],
+  "packageRules": [
+    {
+      "matchManagers": [
+        "composer"
+      ],
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "labels": [
+        "dependencies"
+      ]
+    },
+    {
+      "matchManagers": [
+        "composer"
+      ],
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "labels": [
+        "dependencies",
+        "breaking"
+      ]
+    },
+    {
+      "matchManagers": [
+        "dockerfile"
+      ],
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "labels": [
+        "dependencies"
+      ]
+    },
+    {
+      "matchManagers": [
+        "dockerfile"
+      ],
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "labels": [
+        "dependencies",
+        "breaking"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+    "name": "fabio-desimone/renovate-private-repo-bug",
+    "type": "project",
+    "require": {
+        "fabio-desimone/mailer": "^0.1"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/fabio-desimone/mailer.git"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
