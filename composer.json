@@ -2,7 +2,7 @@
     "name": "fabio-desimone/renovate-private-repo-bug",
     "type": "project",
     "require": {
-        "fabio-desimone/mailer": "^0.1"
+        "fabio-desimone/mailer": "dev-main"
     },
     "repositories": [
         {
